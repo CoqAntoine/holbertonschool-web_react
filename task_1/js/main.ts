@@ -1,57 +1,18 @@
 interface Teacher {
-  firstName: string;
-  lastName: string;
+  readonly firstName: string;
+  readonly lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
+  [key: string]: any;
 }
 
-const teacher1: Teacher = {
-  firstName: "Alice",
-  lastName: "Johnson",
-  fullTimeEmployee: true,
-  yearsOfExperience: 5,
-  location: "New York",
-};
-
-const teacher2: Teacher = {
-  firstName: "Bob",
-  lastName: "Brown",
+const teacher3: Teacher = {
+  firstName: 'John',
+  lastName: 'Doe',
   fullTimeEmployee: false,
-  location: "San Francisco",
+  location: 'London',
+  contract: false,
 };
 
-const teachersList: Teacher[] = [teacher1, teacher2];
-
-const table = document.createElement("table");
-
-// Optional: add table header
-const headerRow = document.createElement("tr");
-
-const nameHeader = document.createElement("th");
-nameHeader.textContent = "First Name";
-
-const locationHeader = document.createElement("th");
-locationHeader.textContent = "Location";
-
-headerRow.appendChild(nameHeader);
-headerRow.appendChild(locationHeader);
-table.appendChild(headerRow);
-
-// Add one row per teacher
-teachersList.forEach((teacher) => {
-  const row = document.createElement("tr");
-
-  const nameCell = document.createElement("td");
-  nameCell.textContent = teacher.firstName;
-
-  const locationCell = document.createElement("td");
-  locationCell.textContent = teacher.location;
-
-  row.appendChild(nameCell);
-  row.appendChild(locationCell);
-  table.appendChild(row);
-});
-
-// Append the table to the document body
-document.body.appendChild(table);
+console.log(teacher3);
