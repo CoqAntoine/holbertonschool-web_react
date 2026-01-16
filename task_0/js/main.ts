@@ -23,7 +23,6 @@ const studentsList: Student[] = [student1, student2];
 
 const table = document.createElement("table");
 
-// Optional: add table header
 const headerRow = document.createElement("tr");
 
 const nameHeader = document.createElement("th");
@@ -36,7 +35,6 @@ headerRow.appendChild(nameHeader);
 headerRow.appendChild(locationHeader);
 table.appendChild(headerRow);
 
-// Add one row per student
 studentsList.forEach((student) => {
   const row = document.createElement("tr");
 
@@ -51,5 +49,4 @@ studentsList.forEach((student) => {
   table.appendChild(row);
 });
 
-// Append the table to the document body
 document.body.appendChild(table);
